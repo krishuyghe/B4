@@ -19,99 +19,42 @@ namespace B4.PE2.HuygheK
     {
         DateTime t = DateTime.Now;
         public string tijd = "";
-        public bool wissel = true;
+        public bool wissel = false;
         public Timer()
         {
             InitializeComponent();
-           
-            // Button startButton = new Button();
-
-            //    startButton.Text = "Start";
-            //  Label clockLabel = new Label();
-            //     StackLayout stack = new StackLayout
-            //   {
-            //      Orientation = StackOrientation.Vertical,
-            //      Children =
-            //     {
-            //          startButton,
-            //           clockLabel
-
-            //         }
-            //    };
-
-
-
-            //  {HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center };
-
-            //        clockLabel.Text = DateTime.Now.ToString("h:mm:ss tt");
-            //        Content = stack ;
-
-            //      SizeChanged += (object sender, EventArgs args) =>
-            //      {
-            //         if (this.Width > 0) clockLabel.FontSize = this.Width / 25;
-            //    };
-            //   Device.StartTimer(TimeSpan.FromMilliseconds(10), () =>
-            //   {
-
-            //      TimeSpan span = (t - DateTime.Now);
-            //      tijd = "{0:%d} day, {0:%h} hour, {0:%m} min, {0:%s} sec, . {0:%fffffff} ";
-            //     clockLabel.Text = string.Format(tijd , span);
-
-            // clockLabel.Text = string.Format("{ 0:MM / dd / yy H: mm: ss zzz}", span);
-            //       DateTime date1 = DateTime.Now;
-            //      int result = DateTime.Compare(date1, t);
-            // clockLabel.Text = result.ToString();
-
-            //       return true;
-            //  });
+            SizeChanged += (object sender, EventArgs args) =>
+                 {
+                     if (this.Width > 0) Tijdmelding.FontSize = this.Width / 25;
+                };
         }
-   
 
-        private async void BtnStartstop_Clicked (object sender, EventArgs e)
+
+        private void BtnStartstop_Clicked (object sender, EventArgs e)
         {
+            Device.StartTimer(TimeSpan.FromMilliseconds(10), () =>
+            {
+                TimeSpan span = (t - DateTime.Now);
+                if (wissel == true)
+                {
+                    tijd = span.ToString("c");
+                    Tijdmelding.Text = tijd;
+                }
+                return true;
+            });
             if (wissel == true)
             {
-                (sender as Button).Text = "Stop";
+                (sender as Button).Text = "Start";
+                t = DateTime.Now;
                 wissel = false;
-                Tijdmelding.Text = "geprobeerd";
-               
             }
             else
             {
-                (sender as Button).Text = "Start";
+                string a = tijd;
+                (sender as Button).Text = "Stop";
                 wissel = true;
+                Tijdmelding.Text = tijd;
             }
-            
-            // Button StopButton = new Button();
-            //  StopButton.Text = "Stop";
-            //   Label clockLabel = new Label();
-            //   StackLayout stack = new StackLayout
-            //  {
-            //      Orientation = StackOrientation.Vertical,
-            //      Children =
-            //   {
-            //            StopButton,
-            //            clockLabel
-
-            //       }
-            //   };
-            //  Content = stack;
-            //   Device.StartTimer(TimeSpan.FromMilliseconds(10), () =>
-            //   {
-
-
-            //       TimeSpan span = (t - DateTime.Now);
-            //      tijd = "{0:%d} day, {0:%h} hour, {0:%m} min, {0:%s} sec, . {0:%fffffff} ";
-            //       clockLabel.Text = string.Format(tijd, span);
-
-            // clockLabel.Text = string.Format("{ 0:MM / dd / yy H: mm: ss zzz}", span);
-            //      DateTime date1 = DateTime.Now;
-            //      int result = DateTime.Compare(date1, t);
-            // clockLabel.Text = result.ToString();
-
-            //     return true;
-            //   });
-
         }
 	    
     }
