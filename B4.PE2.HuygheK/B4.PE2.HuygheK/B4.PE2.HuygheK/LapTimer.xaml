@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="B4.PE2.HuygheK.LapTimer">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="Start" Text="Start" Clicked="BtnStart_Clicked"></Button>
+            <Button x:Name="Lap" Text="Lap" Clicked="BtnLap_Clicked"></Button>
+            <Button x:Name="Stop" Text="Stop" Clicked="BtnStop_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

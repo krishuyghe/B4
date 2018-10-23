@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:B4.PE2.HuygheK"
+             x:Class="B4.PE2.HuygheK.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Button x:Name="BtnTimer" Text="Timer" Clicked="BtnTimer_Clicked"></Button>
+        <Button x:Name="BtnLapTimer" Text="Lap Timer" Clicked="BtnLapTimer_Clicked"></Button>
+        <Button x:Name="Feedback" Text="Feedback" Clicked="BtnFeedback_Clicked"></Button>
+        <Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+
+</ContentPage>

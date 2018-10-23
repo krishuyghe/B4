@@ -6,9 +6,13 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="Fotogallerij en Wiki" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        <Button x:Name="BtnPic" Text="Picture Gallary" Clicked="BtnPic_Clicked"></Button>
+        <Button x:Name="BtnWiki" Text="Wiki" Clicked="BtnWiki_Clicked"></Button>
+        
     </StackLayout>
+   
 
 </ContentPage>

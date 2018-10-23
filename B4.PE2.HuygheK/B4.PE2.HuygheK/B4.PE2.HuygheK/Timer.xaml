@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="B4.PE2.HuygheK.Timer">
+    <ContentPage.Content>
+        <StackLayout>
+           <Button x:Name="Startstop" Text="Start" Clicked="BtnStartstop_Clicked" VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"></Button>
+            <Label x:Name="Tijdmelding" Text="Test"></Label>
+           
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
