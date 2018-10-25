@@ -6,7 +6,7 @@
         <StackLayout>
            <Button x:Name="Startstop" Text="Start" Clicked="BtnStartstop_Clicked" VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand"></Button>
-            <Label x:Name="Tijdmelding" Text="Test"></Label>
+            <Label x:Name="Tijdmelding" Text=""></Label>
            
             
         </StackLayout>
