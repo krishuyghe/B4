@@ -1,4 +1,5 @@
-﻿using System;
+﻿using B4.PE2.HuygheK.classe;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -17,15 +18,16 @@ namespace B4.PE2.HuygheK
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Timer : ContentPage
     {
-        DateTime t = DateTime.Now;
-        public string tijd = "";
-        public bool wissel = false;
+       // DateTime t = DateTime.Now;
+        TijdMeter tijdmeter = new TijdMeter();
+        
+
         public Timer()
         {
             InitializeComponent();
             SizeChanged += (object sender, EventArgs args) =>
                  {
-                     if (this.Width > 0) Tijdmelding.FontSize = this.Width / 25;
+                     if (this.Width > 0) Tijdmelding.FontSize = this.Width / 15;
                 };
         }
 
@@ -34,26 +36,24 @@ namespace B4.PE2.HuygheK
         {
             Device.StartTimer(TimeSpan.FromMilliseconds(10), () =>
             {
-                TimeSpan span = (t - DateTime.Now);
-                if (wissel == true)
+                TimeSpan span = (tijdmeter.t - DateTime.Now);
+                if (tijdmeter.wissel == true)
                 {
-                    tijd = span.ToString("c");
-                    Tijdmelding.Text = tijd;
+                    Tijdmelding.Text = span.ToString("c");
                 }
                 return true;
             });
-            if (wissel == true)
+            if (tijdmeter.wissel == true)
             {
+                tijdmeter.Start();
                 (sender as Button).Text = "Start";
-                t = DateTime.Now;
-                wissel = false;
+                
             }
             else
             {
-                string a = tijd;
                 (sender as Button).Text = "Stop";
-                wissel = true;
-                Tijdmelding.Text = tijd;
+                tijdmeter.Stop();
+                Tijdmelding.Text = tijdmeter.tijd;
             }
         }
 	    

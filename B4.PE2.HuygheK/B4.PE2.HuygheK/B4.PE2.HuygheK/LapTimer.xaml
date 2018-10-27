@@ -8,10 +8,10 @@
             
             <Button x:Name="Start" Text="Start" Clicked="BtnStart_Clicked"></Button>
             <Button x:Name="Lap" Text="Lap" Clicked="BtnLap_Clicked"></Button>
-            <Label Text="Timer"></Label>
-            <Label x:Name="Tijdmelding" Text="" />
-            <Label Text="Laps:" ></Label>
-            <Label x:Name="LapTekst" Text="" />
+            <Label Text="Timer:" HorizontalOptions="CenterAndExpand"></Label>
+            <Label x:Name="Tijdmelding" Text="" HorizontalOptions="CenterAndExpand" />
+            <Label Text=" Laps:" HorizontalOptions="CenterAndExpand"></Label>
+            <Label x:Name="LapTekst" Text="" HorizontalOptions="CenterAndExpand" />
             
         </StackLayout>
     </ContentPage.Content>

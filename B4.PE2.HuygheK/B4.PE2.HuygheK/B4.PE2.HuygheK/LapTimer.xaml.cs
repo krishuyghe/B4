@@ -1,4 +1,5 @@
-﻿using System;
+﻿using B4.PE2.HuygheK.classe;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,63 +13,53 @@ namespace B4.PE2.HuygheK
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LapTimer : ContentPage
 	{
-        DateTime t = DateTime.Now;
-        public string tijd = "";
-        public bool wissel = false;
-        public int lapTeller = 0;
-        public string lapText = "";
+        TijdMeter tijdmeter = new TijdMeter();
+               
         public LapTimer()
         {
             InitializeComponent();
-            
+            Lap.IsEnabled = false;
         }
-        private async void BtnStart_Clicked(object sender, EventArgs e)
+        private void BtnStart_Clicked(object sender, EventArgs e)
 	    {
             Device.StartTimer(TimeSpan.FromMilliseconds(10), () =>
             {
                 
-                TimeSpan span = (t - DateTime.Now);
-                if (wissel == true)
+                TimeSpan span = (tijdmeter.t - DateTime.Now);
+                if (tijdmeter.wissel == true)
                 {
-                    tijd = span.ToString("c");
-                    Tijdmelding.Text = tijd;
+                    tijdmeter.tijd = span.ToString("c");
+                    Tijdmelding.Text = tijdmeter.tijd;    
                 }
                 return true;
             });
-            if (wissel == true)
+            if (tijdmeter.wissel == true)
             {
+                Lap.IsEnabled = false;
                 (sender as Button).Text = "Start";
-                t = DateTime.Now;
-                lapTeller++;
-                lapText = lapText + "lap " + lapTeller.ToString() + " Duur:" + tijd + "\n";
-                LapTekst.Text = lapText;
-                wissel = false;
+                tijdmeter.Start();
+                tijdmeter.Lap();
+                LapTekst.Text = tijdmeter.lapText;
+                
             }
             else
             {
-                lapText = "";
-                lapTeller = 0;
-                LapTekst.Text = lapText;
-                string a = tijd;
+                tijdmeter.Stop();
+                Lap.IsEnabled = true;
+                LapTekst.Text = tijdmeter.lapText;
                 (sender as Button).Text = "Stop";
-                wissel = true;
-                Tijdmelding.Text = tijd;
+                Tijdmelding.Text = tijdmeter.tijd;
             }
 
         }
-	    private async void BtnLap_Clicked(object sender, EventArgs e)
+	    private void BtnLap_Clicked(object sender, EventArgs e)
 	    {
-            lapTeller++;
-            lapText = lapText + "lap "+ lapTeller.ToString() + " Duur:" + tijd + "\n";
-            LapTekst.Text = lapText;
-            t = DateTime.Now;
+            tijdmeter.Lap();
+            LapTekst.Text = tijdmeter.lapText;
+            
 
         }
-        private async void BtnStop_Clicked(object sender, EventArgs e)
-	    {
-
-
-	    }
+        
 
 
     }
