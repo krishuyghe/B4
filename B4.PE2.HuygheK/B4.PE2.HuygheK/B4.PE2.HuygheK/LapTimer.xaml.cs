@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace B4.PE2.HuygheK
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LapTimer : ContentPage
+	public partial class LapTimer : ContentPage 
 	{
         TijdMeter tijdmeter = new TijdMeter();
                

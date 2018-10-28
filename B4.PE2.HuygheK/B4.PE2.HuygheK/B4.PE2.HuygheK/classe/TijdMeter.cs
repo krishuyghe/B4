@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace B4.PE2.HuygheK.classe
 {
     public class TijdMeter
     {
+        
         public DateTime t = DateTime.Now;
         public string tijd = "";
         public bool wissel = false;

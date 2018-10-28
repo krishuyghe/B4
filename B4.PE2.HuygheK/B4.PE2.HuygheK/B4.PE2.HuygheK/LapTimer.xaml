@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="B4.PE2.HuygheK.LapTimer">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout>
             
             
@@ -14,5 +15,6 @@
             <Label x:Name="LapTekst" Text="" HorizontalOptions="CenterAndExpand" />
             
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
