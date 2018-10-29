@@ -12,6 +12,16 @@ namespace B4.PE2.HuygheK
         public MainPage()
         {
             InitializeComponent();
+            SizeChanged += (object sender, EventArgs args) =>
+            {
+                if (this.Width > 0)
+                {
+                    BtnLapTimer.FontSize = this.Width / 13;
+                    BtnTimer.FontSize = this.Width / 13;
+                    BtnFeedback.FontSize = this.Width / 13;
+
+                }
+            };
         }
         private async void BtnTimer_Clicked(object sender, EventArgs e)
         {

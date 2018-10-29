@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="B4.PE2.HuygheK.Feedback">
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="TbiSave_Clicked" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
         <StackLayout>
@@ -16,7 +18,7 @@
             <Label Text="Telefoonnummer" />
             <Entry Keyboard="Telephone" x:Name="txtTelefoonnummer"  Placeholder="Telefoonnummer" />
             <Label Text="Geboortedatum" />
-            <DatePicker Date="{x:Static sys:DateTime.Now}">
+            <DatePicker Date="{x:Static sys:DateTime.Now}" x:Name="txtGeboorte">
                 <DatePicker.Format>dd/MM/yyyy</DatePicker.Format>
                 
             </DatePicker>

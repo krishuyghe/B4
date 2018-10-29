@@ -19,6 +19,17 @@ namespace B4.PE2.HuygheK
         {
             InitializeComponent();
             Lap.IsEnabled = false;
+            SizeChanged += (object sender, EventArgs args) =>
+            {
+                if (this.Width > 0)
+                {
+                    Tijdmelding.FontSize = this.Width / 8;
+                    LapTekst.FontSize = this.Width / 15;
+                    Start.FontSize = this.Width / 13;
+                    Lap.FontSize = this.Width / 13;
+                }
+
+            };
         }
         private void BtnStart_Clicked(object sender, EventArgs e)
 	    {
@@ -28,7 +39,7 @@ namespace B4.PE2.HuygheK
                 TimeSpan span = (tijdmeter.t - DateTime.Now);
                 if (tijdmeter.wissel == true)
                 {
-                    tijdmeter.tijd = span.ToString("c");
+                    tijdmeter.tijd = span.ToString("c").Substring(1);
                     Tijdmelding.Text = tijdmeter.tijd;    
                 }
                 return true;

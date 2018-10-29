@@ -4,9 +4,9 @@
              x:Class="B4.PE2.HuygheK.Timer">
     <ContentPage.Content>
         <StackLayout>
-           <Button x:Name="Startstop" Text="Start" Clicked="BtnStartstop_Clicked" VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand"></Button>
-            <Label x:Name="Tijdmelding" Text=""></Label>
+            <Label x:Name="LblTijdmelding" Text="" Margin="5" HorizontalOptions="CenterAndExpand"></Label>
+           <Button x:Name="BtnStartstop" Text="Start" Clicked="BtnStartstop_Clicked" VerticalOptions="CenterAndExpand" ></Button>
+            
            
             
         </StackLayout>
