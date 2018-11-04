@@ -23,8 +23,8 @@ namespace B4.PE2.HuygheK
             {
                 if (this.Width > 0)
                 {
-                    Tijdmelding.FontSize = this.Width / 8;
-                    LapTekst.FontSize = this.Width / 15;
+                    Tijdmelding.FontSize = this.Width / 15;
+                    LapTekst.FontSize = this.Width / 20;
                     Start.FontSize = this.Width / 13;
                     Lap.FontSize = this.Width / 13;
                 }

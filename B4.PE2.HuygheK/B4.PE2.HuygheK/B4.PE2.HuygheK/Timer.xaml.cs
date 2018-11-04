@@ -27,7 +27,7 @@ namespace B4.PE2.HuygheK
             InitializeComponent();
             SizeChanged += (object sender, EventArgs args) =>
             {
-                if (this.Width > 0) LblTijdmelding.FontSize = this.Width / 8;
+                if (this.Width > 0) LblTijdmelding.FontSize = this.Width / 15;
                 if (this.Width > 0) BtnStartstop.FontSize = this.Width / 8;
             };
         }

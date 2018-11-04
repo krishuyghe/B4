@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace B4.PE2.HuygheK.classe
 {
-    public class TijdMeter
+    public class TijdMeter 
     {
         
         public DateTime t = DateTime.Now;

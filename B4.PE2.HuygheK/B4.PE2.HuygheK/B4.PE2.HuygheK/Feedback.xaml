@@ -14,7 +14,7 @@
             <Label Text="Voornaam"/>
             <Entry Keyboard="Text" x:Name="txtVoorNaam" Placeholder="Voornaam" />
             <Label Text="Email"/>
-            <Entry Keyboard="Email" x:Name="txtEmail" Placeholder="Voornaam" />
+            <Entry Keyboard="Email" x:Name="txtEmail" Placeholder="Email" />
             <Label Text="Telefoonnummer" />
             <Entry Keyboard="Telephone" x:Name="txtTelefoonnummer"  Placeholder="Telefoonnummer" />
             <Label Text="Geboortedatum" />
@@ -31,8 +31,8 @@
                 </Picker.Items>
             </Picker>
             <Label Text="Bericht:" />
-            <Editor VerticalOptions="FillAndExpand" 
-                Margin="10" HeightRequest="30" x:Name="txtBericht" />
+            <Editor VerticalOptions="FillAndExpand" HeightRequest="200"
+                x:Name="txtBericht"  />
             
 
             </StackLayout>
